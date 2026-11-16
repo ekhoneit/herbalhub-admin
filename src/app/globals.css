@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F7FA;
+  --foreground: #102D50;
+  
+  /* Brand Color Palette - Herbal Green Theme */
+  --primary: #0c7c40;
+  --primary-hover: #096333;
+  --primary-light: #e8f5ee;
+  
+  /* Secondary / Deep Forest & Earth */
+  --secondary: #153008;
+  --secondary-hover: #0e2005;
+  --secondary-light: #b07a2d;
+  --secound: #153008;
+  --secound-hover: #0e2005;
+
+  /* Neutral tones */
+  --light-gray: #F5F7FA;
+  --card-bg: #FFFFFF;
+  --card-border: #E5E9F0;
+  --border-radius: 12px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), var(--font-manrope), sans-serif;
+  --font-inter: var(--font-inter);
+  --font-manrope: var(--font-manrope);
+  --font-hind-siliguri: var(--font-hind-siliguri), 'Hind Siliguri', sans-serif;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-navy: var(--secondary);
+  --color-navy-hover: var(--secondary-hover);
+  --color-secound: var(--secound);
+  --color-secound-hover: var(--secound-hover);
+  --color-light-gray: var(--light-gray);
+}
+
+.font-hind {
+  font-family: var(--font-hind-siliguri), 'Hind Siliguri', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F5F7FA;
+    --foreground: #102D50;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar styling */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card and container utilities matching design specifications */
+.herbalhub-card {
+  background: #FFFFFF;
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(16, 45, 80, 0.04);
+}
+
+.herbalhub-btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.herbalhub-btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.herbalhub-btn-navy {
+  background-color: var(--secondary);
+  color: #FFFFFF;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.herbalhub-btn-navy:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Global Dynamic Color Bridge for Admin: Force solid Tailwind hex classes to follow dynamic CSS theme variables */
+.text-\[\#0c7c40\],
+.text-\[\#0c7c40\] {
+  color: var(--primary) !important;
+}
+
+.bg-\[\#0c7c40\],
+.bg-\[\#0c7c40\] {
+  background-color: var(--primary) !important;
+}
+
+.border-\[\#0c7c40\],
+.border-\[\#0c7c40\] {
+  border-color: var(--primary) !important;
+}
+
+.ring-\[\#0c7c40\],
+.ring-\[\#0c7c40\] {
+  --tw-ring-color: var(--primary) !important;
+}
+
+.text-\[\#102D50\],
+.text-\[\#102d50\] {
+  color: var(--secondary) !important;
+}
+
+.bg-\[\#102D50\],
+.bg-\[\#102d50\] {
+  background-color: var(--secondary) !important;
+}
+
+.border-\[\#102D50\],
+.border-\[\#102d50\] {
+  border-color: var(--secondary) !important;
+}
