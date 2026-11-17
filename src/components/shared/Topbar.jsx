@@ -189,7 +189,7 @@ const Topbar = ({ onToggleSidebar, onToggleMobileSidebar, userMenuOpen, onToggle
             </button>
             <div>
               <Link
-                href="https://herbalhub.com"
+                href="https://herbalhubbd.com"
                 target="_blank"
                 className="group flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all duration-300 text-xs font-bold tracking-wide uppercase shadow-sm shadow-primary/5 whitespace-nowrap"
               >
