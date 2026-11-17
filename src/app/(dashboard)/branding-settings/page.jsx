@@ -30,6 +30,7 @@ export default function BrandingSettingsPage() {
     footerLogoBg: false,
     primaryColor: "#0c7c40",
     secondaryColor: "#102D50",
+    gtmId: "",
   });
   const [saving, setSaving] = useState(false);
 
@@ -44,6 +45,7 @@ export default function BrandingSettingsPage() {
         footerLogoBg: Boolean(settings.footerLogoBg),
         primaryColor: settings.primaryColor || "#0c7c40",
         secondaryColor: settings.secondaryColor || "#102D50",
+        gtmId: settings.gtmId || "",
       });
 
       // Also dynamically update CSS variables in admin document root
@@ -265,6 +267,28 @@ export default function BrandingSettingsPage() {
               <Palette size={20} className="text-[#0c7c40]" />
               <span>Favicon & Brand Colors</span>
             </h2>
+
+            {/* Google Tag Manager (GTM) Configuration */}
+            <div className="p-4 bg-emerald-50/60 rounded-xl border border-emerald-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="block text-xs font-bold text-emerald-950 uppercase tracking-wider">
+                  Google Tag Manager (GTM) Container ID
+                </label>
+                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                  Pixel & Analytics
+                </span>
+              </div>
+              <input
+                type="text"
+                placeholder="e.g. GTM-XXXXXXX"
+                value={formData.gtmId}
+                onChange={(e) => setFormData({ ...formData, gtmId: e.target.value.trim() })}
+                className="w-full px-4 py-2.5 bg-white border border-emerald-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[#0c7c40] text-slate-800"
+              />
+              <p className="text-xs text-emerald-800/80 leading-relaxed">
+                এখানে আপনার মার্কেটিং টিমের GTM ID (যেমন: <b>GTM-XXXXXXX</b>) বসিয়ে সেভ করলেই ওয়েবসাইট রিলোড ছাড়াই ফেসবুক পিক্সেল ও গুগল ট্র্যাকিং লাইভ চালু হয়ে যাবে।
+              </p>
+            </div>
 
             {/* Favicon Upload */}
             <div>

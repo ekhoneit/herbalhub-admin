@@ -35,7 +35,7 @@ export function generatePnLPDF({
     name: "Herbalhub",
     address: "Jigatola, Dhaka, Bangladesh",
     phone: "+880 1700000000",
-    email: "support@herbalhub.com",
+    email: "support@herbalhubbd.com",
   },
 }) {
   const doc = new jsPDF({
@@ -104,13 +104,9 @@ export function generatePnLPDF({
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
   doc.setTextColor(70, 70, 70);
+  doc.text(`Phone: ${companyInfo.phone || "01969968555"}`, midX, blockTop + 5);
   doc.text(
-    `Phone: ${companyInfo.phone || "01969968555"}`,
-    midX,
-    blockTop + 5,
-  );
-  doc.text(
-    `Email: ${companyInfo.email || "info@herbalhub.com"}`,
+    `Email: ${companyInfo.email || "info@herbalhubbd.com"}`,
     midX,
     blockTop + 10,
   );

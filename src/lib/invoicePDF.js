@@ -676,7 +676,7 @@ class ClientPDFGenerator {
     doc.setFont(undefined, "normal");
     doc.setTextColor(...secondary);
     doc.text(
-      "Dhaka, Bangladesh | Phone: 01969968555 | Email: info@herbalhub.com",
+      "Dhaka, Bangladesh | Phone: 01969968555 | Email: info@herbalhubbd.com",
       pw / 2,
       FY + 6.5,
       { align: "center" },
