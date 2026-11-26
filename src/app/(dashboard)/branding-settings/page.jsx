@@ -32,6 +32,7 @@ export default function BrandingSettingsPage() {
     secondaryColor: "#102D50",
     gtmId: "",
     pixelId: "",
+    pixelTestEventCode: "",
   });
   const [saving, setSaving] = useState(false);
 
@@ -48,6 +49,7 @@ export default function BrandingSettingsPage() {
         secondaryColor: settings.secondaryColor || "#102D50",
         gtmId: settings.gtmId || "",
         pixelId: settings.pixelId || "",
+        pixelTestEventCode: settings.pixelTestEventCode || "",
       });
 
       // Also dynamically update CSS variables in admin document root
@@ -291,6 +293,21 @@ export default function BrandingSettingsPage() {
               <p className="text-xs text-sky-800/80 leading-relaxed">
                 আপনার ফেসবুক মেটা পিক্সেল আইডিটি (যেমন: <b>1104521979241113</b>) এখানে দিয়ে সেভ করলেই স্বয়ংক্রিয়ভাবে সরাসরি ব্রাউজার ও এক্সটেনশনে ফেসবুক ইভেন্ট ফায়ার হওয়া শুরু করবে।
               </p>
+              <div className="pt-2">
+                <label className="block text-xs font-bold text-sky-950 uppercase tracking-wider mb-1">
+                  Meta Pixel Test Event Code (Optional)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. TEST17390"
+                  value={formData.pixelTestEventCode || ""}
+                  onChange={(e) => setFormData({ ...formData, pixelTestEventCode: e.target.value.trim() })}
+                  className="w-full px-4 py-2.5 bg-white border border-sky-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-sky-600 text-slate-800"
+                />
+                <p className="text-xs text-sky-800/80 leading-relaxed mt-1">
+                  Meta Events Manager &rarr; Test Events থেকে পাওয়া কোড এখানে বসিয়ে সেভ করুন। টেস্ট শেষ হলে এটি খালি করে সেভ করবেন।
+                </p>
+              </div>
             </div>
 
             {/* Google Tag Manager (GTM) Configuration */}
